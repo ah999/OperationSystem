@@ -1,0 +1,25 @@
+{% extends "operationreservation/base.html" %}
+{% block body %}
+    <div class="container" style="max-width:600px">
+        <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">All Books</h1>
+            <p class="lead">Add new operation.</p>
+        </div>
+        <div class="py-5">
+            <div class="row">
+                <div class="col-12">
+                    <form method="post">
+                        {% csrf_token %}
+                        {%  for field in fields %}
+                            <div>{{ field.lable_tag }}</div>
+                            <div>{{ field }}</div>
+                        {% endfor %}
+                        {{ form.as_p }}
+                        <input type="submit">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

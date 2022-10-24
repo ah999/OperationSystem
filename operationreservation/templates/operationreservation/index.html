@@ -1,0 +1,18 @@
+{% extends "operationreservation/base.html" %}
+
+{% block title %}
+    Operations
+{% endblock %}
+{% block body %}
+    <h1>Operations</h1>
+    <ul>
+        {% for operation in operations_list %}
+            <li>
+                <a href="{% url 'operationreservation:operation' operation.id %}">{{operation}}</a>
+            </li>
+        {% endfor %}
+
+    </ul>
+
+    <a href="{% url 'operationreservation:operation-add' %}">add</a>
+{% endblock %}

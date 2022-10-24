@@ -1,0 +1,16 @@
+{% extends "operationreservation/base.html" %}
+{% block title %}
+    Operation {{operation.id}}
+{% endblock %}
+
+{% block body %}
+    <h1>Operation {{operation.id}}</h1>
+    <ul>
+        <li>
+            date : {{operation.date}}
+        </li>
+
+    </ul>
+
+    <a href="{% url 'operationreservation:index' %}">back</a>
+{% endblock %}
